@@ -15,26 +15,33 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2 class="text-center my-3">Eloquent Relationship</h2>
-                <table class="table table-hover">
+                <table class="table table-hover bordered">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>Title</th>
+                            <th>Comments</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-
-                      @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->phone->name }}</td>
-                        </tr>
-                      @endforeach
+                        @foreach ($posts as $data)
+                            <tr>
+                                <td><strong>{{ $data->title }}</strong></td>
+                                @foreach ($data->comments as $com)
+                                    <td>{{ $com->description }}</td>
+                                @endforeach
+                            </tr>
+                        @endforeach
                     </tbody>
                   </table>
             </div>
         </div>
     </div>
+
+
+
 
 
 

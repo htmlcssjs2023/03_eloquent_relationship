@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Phone;
-
+use App\Models\Post;
+use App\Models\Comment;
 
 Route::get('/', function () {
     // $user = Phone::find(1)->user;
@@ -11,8 +12,16 @@ Route::get('/', function () {
 
     // $phone = User::find(1);
     // return $phone;
-    $users = User::all();
+    // $users = User::all();
 
 
-    return view('welcome',compact('users'));
+    //=============  ONE TO MANY RELATIONSHIP =========
+    // $post = Post::find(3)->comments;
+    // return $post;
+
+
+    $posts = Post::with('comments')->get();
+    // return $posts;
+
+    return view('welcome',compact('posts'));
 });
