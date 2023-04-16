@@ -18,24 +18,19 @@
                 <table class="table table-hover bordered">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Comments</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Category Name</th>
+                            <th>Post Name</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $data)
+                        @foreach ($categories as $category)
                             <tr>
-                                <td><strong>{{ $data->title }}</strong></td>
-
-                                    <td>
-                                        @foreach ($data->comments as $comment)
-                                            {{ $comment->description }} <br>
-                                        @endforeach
-                                    </td>
-
+                                <td>{{ $category->name }}</td>
+                                <td>
+                                    @foreach ($category->posts as $post)
+                                        {{ $post->title }} <br>
+                                    @endforeach
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
