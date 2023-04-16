@@ -16,20 +16,20 @@
             <div class="col-sm-12">
                 <h2 class="text-center my-3">Eloquent Relationship</h2>
                 <table class="table table-hover">
-                    {{-- <thead>
+                    <thead>
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                        </tr> --}}
+                        </tr>
                     </thead>
                     <tbody>
-                  
-                      {{-- @foreach ($users as $user)
+
+                      @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->phone->name }}</td>
                         </tr>
-                      @endforeach --}}
+                      @endforeach
                     </tbody>
                   </table>
             </div>
