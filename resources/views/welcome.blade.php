@@ -29,9 +29,13 @@
                         @foreach ($posts as $data)
                             <tr>
                                 <td><strong>{{ $data->title }}</strong></td>
-                                @foreach ($data->comments as $com)
-                                    <td>{{ $com->description }}</td>
-                                @endforeach
+
+                                    <td>
+                                        @foreach ($data->comments as $comment)
+                                            {{ $comment->description }} <br>
+                                        @endforeach
+                                    </td>
+
                             </tr>
                         @endforeach
                     </tbody>
