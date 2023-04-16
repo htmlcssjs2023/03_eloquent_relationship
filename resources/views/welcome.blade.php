@@ -18,19 +18,17 @@
                 <table class="table table-hover bordered">
                     <thead>
                         <tr>
-                            <th>Category Name</th>
-                            <th>Post Name</th>
+                            <th>Mechanic Name</th>
+                            <th>Car Name</th>
+                            <th>Owner</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($mechanics as $data)
                             <tr>
-                                <td>{{ $category->name }}</td>
-                                <td>
-                                    @foreach ($category->posts as $post)
-                                        {{ $post->title }} <br>
-                                    @endforeach
-                                </td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->car->name}}</td>
+                                <td>{{ $data->carOwner->name }}</td>
                             </tr>
                         @endforeach
                     </tbody>

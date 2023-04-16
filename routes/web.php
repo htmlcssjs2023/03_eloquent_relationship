@@ -6,6 +6,7 @@ use App\Models\Phone;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Category;
+use App\Models\Mechanic;
 
 Route::get('/', function () {
     // $user = Phone::find(1)->user;
@@ -38,8 +39,13 @@ Route::get('/', function () {
 
     // Which post are available under category
 
-    $categories = Category::with('posts')->get();
-    // return $categories;
+    // $categories = Category::with('posts')->get();
+    // // return $categories;
 
-    return view('welcome',compact('categories'));
+
+    // Show mechanic data with car owner
+    $mechanics = Mechanic::with('carOwner')->get();
+    // return $mechanics;
+
+    return view('welcome',compact('mechanics'));
 });
